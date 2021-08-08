@@ -3,11 +3,11 @@ import * as web3 from '@solana/web3.js';
 import { StyledTitle, StyledHistoryList, StyledPage } from './styles';
 import { TransactionCard } from '../../components';
 
-//const account = prompt('Введите код аккаунта');
+const account = prompt('Введите код аккаунта');
 
 const TransactionHistory = () => {
   const [transactions, setTransactions] = useState([]);
-  const account = '8YmMhex5Vd5JPsyNhCwFPDx5vqeedpCuyFE2W7VtRXQT';
+  //const account = '8YmMhex5Vd5JPsyNhCwFPDx5vqeedpCuyFE2W7VtRXQT';
   const connection = new web3.Connection('https://api.rpcpool.com/');
 
   const pbk = new web3.PublicKey(account);

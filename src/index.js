@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <Route exact path='/transactions'>
+        <Route exact path='/'>
           <TransactionHistory />
         </Route>
         <Route

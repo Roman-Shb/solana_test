@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledListItem, StyledLink, StyledWrapper, StyledText, StyledBoldText } from './styles';
-import { Card, Typography, Space } from 'antd';
+import { Card, Typography, Space, Row, Col } from 'antd';
 
 const { Text, Link } = Typography;
 
@@ -36,39 +36,43 @@ const TransactionCard = ({ transaction }) => {
     //     </StyledWrapper>
     //   </StyledLink>
     // </StyledListItem>
-    <Card
-      title={
-        <Text strong style={{ color: '#9cbbb2' }}>
-          Информация о транзакции
-        </Text>
-      }
-      extra={
-        <StyledLink to={`/transaction/${transaction.signature}`}>
-          <Text strong style={{ color: '#9cbbb2' }}>
-            Подробная информация
-          </Text>
-        </StyledLink>
-      }
-      style={{
-        backgroundColor: '#121313',
-        borderColor: '#036454',
-        width: 1000,
-        margin: 12,
-        marginLeft: 288,
-      }}
-    >
-      <Space direction='vertical'>
-        <Text strong style={{ color: '#9cbbb2' }}>
-          ДАТА ТРАНЗАКЦИИ: {timeConverter(transaction.blockTime)}
-        </Text>
-        <Text strong style={{ color: '#9cbbb2' }}>
-          СИГНАТУРА: {transaction.signature}
-        </Text>
-        <Text strong style={{ color: '#9cbbb2' }}>
-          СЛОТ: {transaction.slot}
-        </Text>
-      </Space>
-    </Card>
+
+    <Row style={{ justifyContent: 'center' }}>
+      <Col span={14}>
+        <Card
+          title={
+            <Text strong style={{ color: '#9cbbb2' }}>
+              Информация о транзакции
+            </Text>
+          }
+          extra={
+            <StyledLink to={`/transaction/${transaction.signature}`}>
+              <Text strong style={{ color: '#9cbbb2' }}>
+                Подробная информация
+              </Text>
+            </StyledLink>
+          }
+          style={{
+            backgroundColor: '#121313',
+            borderColor: '#036454',
+            margin: 12,
+            overflow: 'hidden',
+          }}
+        >
+          <Space direction='vertical'>
+            <Text strong style={{ color: '#9cbbb2' }}>
+              ДАТА ТРАНЗАКЦИИ: {timeConverter(transaction.blockTime)}
+            </Text>
+            <Text strong style={{ color: '#9cbbb2', wordBreak: 'break-all' }}>
+              СИГНАТУРА: {transaction.signature}
+            </Text>
+            <Text strong style={{ color: '#9cbbb2' }}>
+              СЛОТ: {transaction.slot}
+            </Text>
+          </Space>
+        </Card>
+      </Col>
+    </Row>
   );
 };
 
