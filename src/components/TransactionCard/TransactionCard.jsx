@@ -6,15 +6,15 @@ const { Text, Link } = Typography;
 
 //Функция для возврата времени в читаемом значении
 function timeConverter(UNIX_timestamp) {
-  var a = new Date(UNIX_timestamp * 1000);
-  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  var year = a.getFullYear();
-  var month = months[a.getMonth()];
-  var date = a.getDate();
-  var hour = a.getHours();
-  var min = a.getMinutes();
-  var sec = a.getSeconds();
-  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+  let a = new Date(UNIX_timestamp * 1000);
+  let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  let year = a.getFullYear();
+  let month = months[a.getMonth()];
+  let date = a.getDate();
+  let hour = a.getHours();
+  let min = a.getMinutes();
+  let sec = a.getSeconds();
+  let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
   return time;
 }
 
@@ -38,7 +38,7 @@ const TransactionCard = ({ transaction }) => {
     // </StyledListItem>
 
     <Row style={{ justifyContent: 'center' }}>
-      <Col span={14}>
+      <Col span={15}>
         <Card
           title={
             <Text strong style={{ color: '#9cbbb2' }}>

@@ -19,6 +19,9 @@ const Transaction = ({ signature }) => {
     }
     getTransactionInfo();
   }, [signature]);
+  // if (transactionInfo.meta) {
+  //   console.log(transactionInfo.meta.status);
+  // }
 
   const renderStatus = () => {
     if (Object.keys(transactionInfo).length) {
